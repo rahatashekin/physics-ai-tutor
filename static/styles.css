@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap');
+
+/* ── Global ───────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+body, .stApp { font-family: 'Hind Siliguri', 'Inter', sans-serif !important; }
+
+/* Main background — off-white, warm */
+.main, .stApp,
+[data-testid="stAppViewContainer"],
+[data-testid="stMain"] {
+    background-color: #f8f9fc !important;
+}
+
+/* Hide default Streamlit top padding */
+[data-testid="stMain"] > div:first-child { padding-top: 0.5rem !important; }
+
+/* ── Sidebar — deep slate, clean ─────────────────────────── */
+[data-testid="stSidebar"] {
+    background: #1e293b !important;
+    box-shadow: 2px 0 20px rgba(0,0,0,0.15);
+}
+[data-testid="stSidebar"] * { color: #e2e8f0 !important; }
+[data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3 {
+    color: #f1f5f9 !important;
+    font-size: 0.8rem !important;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600 !important;
+}
+[data-testid="stSidebar"] hr {
+    border-color: rgba(255,255,255,0.08) !important;
+    margin: 0.6rem 0 !important;
+}
+/* Progress bar */
+[data-testid="stSidebar"] .stProgress > div > div > div {
+    background: linear-gradient(90deg, #6366f1, #a855f7) !important;
+}
+/* Sidebar inputs */
+[data-testid="stSidebar"] .stTextInput input,
+[data-testid="stSidebar"] .stSelectbox > div > div {
+    background: rgba(255,255,255,0.07) !important;
+    border: 1px solid rgba(255,255,255,0.12) !important;
+    color: #f1f5f9 !important;
+    border-radius: 8px !important;
+}
+/* Sidebar selectbox text */
+[data-testid="stSidebar"] .stSelectbox span { color: #f1f5f9 !important; }
+/* Sidebar toggle */
+[data-testid="stSidebar"] .stToggle span { color: #cbd5e1 !important; }
+/* Sidebar buttons — new chat */
+[data-testid="stSidebar"] .stButton > button {
+    background: rgba(99,102,241,0.25) !important;
+    color: #e0e7ff !important;
+    border: 1px solid rgba(99,102,241,0.4) !important;
+    border-radius: 10px !important;
+    font-weight: 500 !important;
+    font-size: 0.9rem !important;
+    padding: 0.5rem 1rem !important;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+[data-testid="stSidebar"] .stButton > button:hover {
+    background: rgba(99,102,241,0.45) !important;
+    border-color: rgba(99,102,241,0.7) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(99,102,241,0.3);
+}
+/* Sidebar expander — transparent on dark bg */
+[data-testid="stSidebar"] [data-testid="stExpander"] {
+    background: rgba(255,255,255,0.04) !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    border-radius: 10px !important;
+}
+[data-testid="stSidebar"] [data-testid="stExpander"] * {
+    color: #cbd5e1 !important;
+}
+[data-testid="stSidebar"] [data-testid="stExpander"] summary,
+[data-testid="stSidebar"] [data-testid="stExpander"] summary span {
+    color: #94a3b8 !important;
+    font-size: 0.82rem !important;
+}
+[data-testid="stSidebar"] [data-testid="stExpander"] strong {
+    color: #e2e8f0 !important;
+}
+
+/* ── Chat messages — proper bubble style ─────────────────── */
+/* Remove default stChatMessage border box */
+[data-testid="stChatMessage"] {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0.15rem 0 !important;
+    margin-bottom: 0.25rem !important;
+}
+
+/* User message — right aligned bubble */
+[data-testid="stChatMessage"][data-testid*="user"],
+[data-testid="stChatMessage"]:has([data-testid="chatAvatarIcon-user"]) {
+    flex-direction: row-reverse !important;
+}
+[data-testid="stChatMessage"]:has([data-testid="chatAvatarIcon-user"]) .stMarkdown {
+    background: #4f46e5 !important;
+    color: #fff !important;
+    border-radius: 18px 18px 4px 18px !important;
+    padding: 0.75rem 1rem !important;
+    max-width: 75% !important;
+    margin-left: auto !important;
+    box-shadow: 0 2px 8px rgba(79,70,229,0.2);
+}
+[data-testid="stChatMessage"]:has([data-testid="chatAvatarIcon-user"]) .stMarkdown p {
+    color: #fff !important;
+}
+
+/* AI/assistant message — left aligned bubble */
+[data-testid="stChatMessage"]:has([data-testid="chatAvatarIcon-assistant"]) .stMarkdown {
+    background: #ffffff !important;
+    border-radius: 18px 18px 18px 4px !important;
+    padding: 0.75rem 1rem !important;
+    max-width: 80% !important;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    border: 1px solid #e9ecef;
+}
+[data-testid="stChatMessage"]:has([data-testid="chatAvatarIcon-assistant"]) .stMarkdown p,
+[data-testid="stChatMessage"]:has([data-testid="chatAvatarIcon-assistant"]) .stMarkdown li {
+    color: #1e293b !important;
+    line-height: 1.7 !important;
+}
+
+/* Avatar icons */
+[data-testid="chatAvatarIcon-user"],
+[data-testid="chatAvatarIcon-assistant"] {
+    width: 34px !important;
+    height: 34px !important;
+    border-radius: 50% !important;
+    flex-shrink: 0 !important;
+}
+
+/* ── Chat input — native, styled nicely ────────────────────── */
+[data-testid="stBottom"] {
+    background: linear-gradient(to top, #f8f9fc 80%, transparent) !important;
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.5rem !important;
+}
+[data-testid="stChatInput"] {
+    border-radius: 26px !important;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.09), 0 1px 4px rgba(0,0,0,0.05) !important;
+    border: 1.5px solid #e2e8f0 !important;
+    background: #ffffff !important;
+    transition: box-shadow 0.2s, border-color 0.2s !important;
+}
+[data-testid="stChatInput"]:focus-within {
+    border-color: #6366f1 !important;
+    box-shadow: 0 4px 28px rgba(99,102,241,0.16) !important;
+}
+[data-testid="stChatInput"] textarea {
+    padding: 0.75rem 1rem !important;
+    font-family: 'Hind Siliguri', 'Inter', sans-serif !important;
+    font-size: 0.97rem !important;
+    color: #1e293b !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    line-height: 1.6 !important;
+}
+[data-testid="stChatInput"] textarea::placeholder {
+    color: #94a3b8 !important;
+}
+/* File uploader — off-screen so JS can still trigger it */
+[data-testid="stFileUploader"] {
+    position: fixed !important;
+    top: -400px !important;
+    left: -400px !important;
+    opacity: 0 !important;
+    z-index: -999 !important;
+}
+[data-testid="stFileUploader"] input[type="file"] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+
+/* ── Typography ──────────────────────────────────────────── */
+h1 { color: #1e1b4b !important; font-weight: 700 !important; font-size: 1.6rem !important; }
+h2, h3 { color: #312e81 !important; }
+p, li { color: #334155 !important; line-height: 1.75 !important; }
+code { background: #f1f5f9 !important; border-radius: 5px; padding: 2px 6px; font-size: 0.9em; }
+
+/* ── Compact header area ─────────────────────────────────── */
+.tutor-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.6rem 0 0.4rem 0;
+    border-bottom: 1px solid #e9ecef;
+    margin-bottom: 0.5rem;
+}
+.tutor-header-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1e1b4b;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+.tutor-header-sub {
+    font-size: 0.75rem;
+    color: #64748b;
+    margin-top: 1px;
+}
+
+/* ── Image upload inline area ────────────────────────────── */
+.upload-inline {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.4rem 0.6rem;
+    background: #f1f5f9;
+    border-radius: 10px;
+    margin-bottom: 0.4rem;
+    border: 1px dashed #cbd5e1;
+    font-size: 0.82rem;
+    color: #64748b;
+}
+.upload-inline:hover { border-color: #6366f1; background: #eef2ff; cursor: pointer; }
+
+/* ── Diagram box ─────────────────────────────────────────── */
+.diagram-box {
+    border: 1.5px solid #e0e7ff;
+    border-radius: 14px;
+    padding: 12px;
+    background: #fafafe;
+    margin: 8px 0;
+    box-shadow: 0 2px 8px rgba(99,102,241,0.06);
+}
+
+/* ── Status widget ───────────────────────────────────────── */
+[data-testid="stStatus"] {
+    border-radius: 10px !important;
+    border: 1px solid #e0e7ff !important;
+    background: #fafafe !important;
+    font-size: 0.85rem !important;
+}
+
+/* ── Expander in main area ───────────────────────────────── */
+[data-testid="stMain"] [data-testid="stExpander"] {
+    background: #fff !important;
+    border: 1px solid #e9ecef !important;
+    border-radius: 12px !important;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+/* ── Sidebar level badge ─────────────────────────────────── */
+.level-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(99,102,241,0.15);
+    border-radius: 20px;
+    padding: 3px 10px;
+    font-size: 0.78rem;
+    color: #c7d2fe !important;
+    margin-bottom: 4px;
+}

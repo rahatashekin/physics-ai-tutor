@@ -1,0 +1,23 @@
+# Core
+openai>=1.40.0
+python-dotenv>=1.0.0
+pydantic>=2.7.0
+pydantic-ai>=0.0.13
+
+# Document Processing
+docling>=2.14.0
+tiktoken>=0.7.0
+
+# Vector Store
+lancedb>=0.10.0
+
+# Diagram Generation
+matplotlib>=3.9.0
+schemdraw>=0.19
+Pillow>=10.4.0
+
+# UI
+streamlit>=1.37.0
+
+# Utilities
+requests>=2.32.0

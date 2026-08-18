@@ -1,0 +1,47 @@
+# Environment variables
+.env
+
+# Data files (large — not tracked in git)
+data/raw/
+data/processed/
+data/lancedb/
+
+# User profiles (runtime data)
+profiles/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Distribution / packaging
+*.egg-info/
+dist/
+build/
+
+# OS generated
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Logs
+*.log
