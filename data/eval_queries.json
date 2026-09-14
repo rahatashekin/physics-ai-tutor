@@ -1,0 +1,136 @@
+[
+  {
+    "query": "বল কী?",
+    "expected_mode": "TEACH",
+    "expected_strategy": "SCAFFOLDING",
+    "expected_hint": null,
+    "expected_intent": "CONCEPT",
+    "note": "New topic, concept question"
+  },
+  {
+    "query": "F=10N, m=5kg হলে ত্বরণ কত?",
+    "expected_mode": "PRACTICE",
+    "expected_strategy": "SCAFFOLDING",
+    "expected_hint": "L1",
+    "expected_intent": "PROBLEM",
+    "note": "Math problem, needs guidance"
+  },
+  {
+    "query": "বুঝলাম না, আবার বোঝাও",
+    "expected_mode": "TEACH",
+    "expected_strategy": "EXPLORATION",
+    "expected_hint": null,
+    "expected_intent": "CLARIFY",
+    "note": "Clarification request"
+  },
+  {
+    "query": "সরাসরি উত্তর দাও",
+    "expected_mode": "TEACH",
+    "expected_override": "DIRECT_ANSWER",
+    "expected_hint": "L4",
+    "expected_intent": "CONCEPT",
+    "note": "Direct answer override"
+  },
+  {
+    "query": "নিউটনের ২য় সূত্র বোঝাও উপমা দিয়ে",
+    "expected_mode": "TEACH",
+    "expected_override": "STYLE_ANALOGY",
+    "expected_intent": "CONCEPT",
+    "note": "Style override — analogy"
+  },
+  {
+    "query": "আমাকে একটা quiz দাও",
+    "expected_mode": "PRACTICE",
+    "expected_override": "WANT_QUIZ",
+    "expected_strategy": "ASSESSMENT",
+    "expected_intent": "PRACTICE_REQUEST",
+    "note": "Quiz request override"
+  },
+  {
+    "query": "hint দাও",
+    "expected_mode": "PRACTICE",
+    "expected_override": "WANT_HINT",
+    "expected_intent": "PROBLEM",
+    "note": "Hint request"
+  },
+  {
+    "query": "হাই, কেমন আছো?",
+    "expected_mode": "TEACH",
+    "expected_strategy": "SCAFFOLDING",
+    "expected_intent": "GREETING",
+    "note": "Greeting"
+  },
+  {
+    "query": "What is velocity?",
+    "expected_mode": "TEACH",
+    "expected_intent": "CONCEPT",
+    "note": "English input — response should be English"
+  },
+  {
+    "query": "bol ki jinish?",
+    "expected_mode": "TEACH",
+    "expected_intent": "CONCEPT",
+    "note": "Banglish input — response should be Bangla"
+  },
+  {
+    "query": "আরো practice দাও",
+    "expected_mode": "PRACTICE",
+    "expected_intent": "PRACTICE_REQUEST",
+    "note": "Practice request"
+  },
+  {
+    "query": "একটা গাড়ি 20 m/s বেগে যাচ্ছে। 5 সেকেন্ডে থামলে ত্বরণ কত?",
+    "expected_mode": "PRACTICE",
+    "expected_intent": "PROBLEM",
+    "note": "Multi-concept problem"
+  },
+  {
+    "query": "ভর আর ওজন কি একই?",
+    "expected_mode": "TEACH",
+    "expected_intent": "CONCEPT",
+    "note": "Common misconception question"
+  },
+  {
+    "query": "পরীক্ষায় কী পড়বো?",
+    "expected_mode": "TEACH",
+    "expected_intent": "GENERAL",
+    "note": "General question — outside physics concept"
+  },
+  {
+    "query": "মাধ্যাকর্ষণ নিয়ে step by step বোঝাও",
+    "expected_mode": "TEACH",
+    "expected_override": "STYLE_STEP_BY_STEP",
+    "expected_intent": "CONCEPT",
+    "note": "Style override — step by step"
+  },
+  {
+    "query": "g = 9.8 m/s^2 কেন?",
+    "expected_mode": "TEACH",
+    "expected_intent": "CONCEPT",
+    "note": "Deep why question"
+  },
+  {
+    "query": "F = ma সূত্রটা কোথা থেকে এলো?",
+    "expected_mode": "TEACH",
+    "expected_intent": "CONCEPT",
+    "note": "Derivation/origin question"
+  },
+  {
+    "query": "100 kg ভরের একটি বস্তুর ওজন পৃথিবীতে কত?",
+    "expected_mode": "PRACTICE",
+    "expected_intent": "PROBLEM",
+    "note": "Calculation problem"
+  },
+  {
+    "query": "ami bujhi nai",
+    "expected_mode": "TEACH",
+    "expected_intent": "CLARIFY",
+    "note": "Banglish confusion signal"
+  },
+  {
+    "query": "এটা তো সহজ! আরো কঠিন দাও!",
+    "expected_mode": "PRACTICE",
+    "expected_intent": "PRACTICE_REQUEST",
+    "note": "Challenge request — mastered signal"
+  }
+]

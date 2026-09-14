@@ -104,14 +104,20 @@ def figures_to_context(figs: list[dict]) -> str:
             continue
 
         # Header
-        header_parts = [f"[চিত্র | অধ্যায় {ch} | পৃষ্ঠা {pg}]"]
+        header_parts = [f"[চিত্র | অধ্যায় {ch} | পৃষ্ঠা {pg}]"]
         if fig_id:
             header_parts.append(f"চিত্র {fig_id}")
         if cap:
             header_parts.append(cap)
-        header = " — ".join(header_parts)
+        header = " - ".join(header_parts)
+        
+        img_path = fig.get("image_path", "")
+        if img_path:
+            img_instruction = f"\nTo display this exact book figure to the user, output exactly this markdown: ![Book Figure](BOOK_FIGURE:{img_path})"
+        else:
+            img_instruction = ""
 
-        parts.append(f"{header}\n{desc[:600]}")
+        parts.append(f"{header}{img_instruction}\n{desc[:600]}")
 
     return "\n\n".join(parts) if parts else ""
 

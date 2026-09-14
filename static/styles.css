@@ -139,7 +139,7 @@ body, .stApp { font-family: 'Hind Siliguri', 'Inter', sans-serif !important; }
 [data-testid="stBottom"] {
     background: linear-gradient(to top, #f8f9fc 80%, transparent) !important;
     padding-top: 0.75rem !important;
-    padding-bottom: 0.5rem !important;
+    padding-bottom: max(0.5rem, env(safe-area-inset-bottom)) !important;
 }
 [data-testid="stChatInput"] {
     border-radius: 26px !important;
@@ -155,7 +155,7 @@ body, .stApp { font-family: 'Hind Siliguri', 'Inter', sans-serif !important; }
 [data-testid="stChatInput"] textarea {
     padding: 0.75rem 1rem !important;
     font-family: 'Hind Siliguri', 'Inter', sans-serif !important;
-    font-size: 0.97rem !important;
+    font-size: 16px !important;
     color: #1e293b !important;
     background: transparent !important;
     border: none !important;
